@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ABRAXAS OS</title>
+  <script>
+    const stored = localStorage.getItem('abraxas_locale');
+    if (stored === 'es' || stored === 'en') {
+      window.location.replace('./' + stored + '/index.html');
+    } else {
+      const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (browserLang.startsWith('es')) {
+        window.location.replace('./es/index.html');
+      } else {
+        window.location.replace('./en/index.html');
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="./en/index.html">English</a> or <a href="./es/index.html">Español</a>...</p>
+</body>
+</html>
